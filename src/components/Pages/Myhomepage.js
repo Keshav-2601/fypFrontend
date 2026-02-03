@@ -1,4 +1,6 @@
-import React from "react";
+import { jwtDecode } from "jwt-decode";
+import React, { useEffect } from "react";
+import { use } from "react";
 import { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -21,6 +23,31 @@ export default function Homepage() {
       return new_Array;
     });
   };
+  useEffect(()=>{
+    const token=localStorage.getItem("jwt-token")
+    if(!token){
+      return ;
+    }
+    try {
+       const decodeToken =jwtDecode(token)
+       console.log("decode token is ",decodeToken);
+       if(decodeToken.exp*1000<new Date().getTime()){
+        localStorage.removeItem("jwt-token");
+        navigate("/login")
+       }
+       const time_to_expire=decodeToken.exp*1000-new Date().getTime();
+       // will automatically run this after remaning time and will delete token ans naviagte to login page.
+       const timeout=setTimeout(()=>{
+        localStorage.removeItem("jwt-token");
+        navigate("/");
+       },time_to_expire);
+       return ()=>clearTimeout(timeout);
+
+    } catch (error) {
+      console.log("jwt doesnot have correct funciton ",error);
+    }
+    
+  },[]);
   return (
     <>
       <div
