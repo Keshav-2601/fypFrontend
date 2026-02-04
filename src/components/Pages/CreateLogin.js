@@ -43,23 +43,23 @@ const createuser=async(e)=>{
       <Container className="d-flex align-items-center justify-content-center min-vh-100">
         <Row className="w-100 justify-content-center">
           <Col xs={12} sm={10} md={7} lg={5} xl={4}>
-            <Card className="shadow-sm border-0">
+            <Card style={{backgroundColor:"#2C2C2C",border:"1px solid #A8DADC "}} className="shadow-sm border">
               <Card.Body className="p-4 p-md-5">
-                <h3 className="text-center mb-4">Create Account</h3>
+                <h3 style={{color:"#E4E4E4"}} className="text-center mb-4">Create Account</h3>
 
                 <Form onSubmit={createuser}>
                   <Form.Group className="mb-3" controlId="name">
-                    <Form.Label>Name</Form.Label>
+                    <Form.Label style={{color:"#E4E4E4"}}>Name</Form.Label>
                     <Form.Control type="text" placeholder="Enter your name" onChange={onchangeName} />
                   </Form.Group>
 
                   <Form.Group className="mb-3" controlId="email">
-                    <Form.Label>Email</Form.Label>
+                    <Form.Label style={{color:"#E4E4E4"}}>Email</Form.Label>
                     <Form.Control type="email" placeholder="name@example.com"  onChange={onchangeEmail}/>
                   </Form.Group>
 
                   <Form.Group className="mb-3" controlId="password">
-                    <Form.Label>Password</Form.Label>
+                    <Form.Label style={{color:"#E4E4E4"}}>Password</Form.Label>
                     <Form.Control
                       type="password"
                       placeholder="Create a password"
@@ -68,7 +68,7 @@ const createuser=async(e)=>{
                   </Form.Group>
 
                   <Form.Group className="mb-3" controlId="address">
-                    <Form.Label>Address</Form.Label>
+                    <Form.Label style={{color:"#E4E4E4"}}>Address</Form.Label>
                     <Form.Control
                       type="text"
                       placeholder="Enter your address"
@@ -76,13 +76,13 @@ const createuser=async(e)=>{
                     />
                   </Form.Group>
 
-                  <Button type="submit" variant="success" className="w-100">
+                  <Button style={{backgroundColor:"#B39CD0"}} type="submit" variant="success" className="w-100">
                     Create account
                   </Button>
 
                   <div className="text-center mt-3">
-                    <span className="me-1">Already have an account?</span>
-                    <Link to="/" className="text-decoration-none">
+                    <span style={{color:"#E4E4E4"}} className="me-1">Already have an account?</span>
+                    <Link style={{color:"#E4E4E4"}} to="/" className="text-decoration-none">
                       Login
                     </Link>
                   </div>

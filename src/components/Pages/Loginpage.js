@@ -37,27 +37,28 @@ export default function LoginPage() {
   }
   return (
     <>
-      <Container className="d-flex align-items-center justify-content-center min-vh-100">
+      <Container  className="d-flex align-items-center justify-content-center min-vh-100">
         <Row className="w-100 justify-content-center">
           <Col xs={12} sm={10} md={7} lg={5} xl={4}>
-            <Card className="shadow-sm border-0">
+            <Card style={{backgroundColor:"#2C2C2C",border:"1px solid #A8DADC"}} className="shadow-sm">
               <Card.Body className="p-4 p-md-5">
-                <h3 className="text-center mb-4">Login</h3>
+                <h3 style={{color:"#E4E4E4"}} className="text-center mb-4">Login</h3>
 
-                <Form onSubmit={Submitloginform}>
+                <Form style={{backgroundColor:"#2C2C2C"}} onSubmit={Submitloginform}>
                   <Form.Group className="mb-3" controlId="formEmail">
-                    <Form.Label>Email</Form.Label>
+                    <Form.Label style={{color:"#E4E4E4"}}>Email</Form.Label>
                     <Form.Control
                       type="email"
                       placeholder="name@example.com"
                     
                       required
                       onChange={emailchange}
+                      
                     />
                   </Form.Group>
 
                   <Form.Group className="mb-3" controlId="formPassword">
-                    <Form.Label>Password</Form.Label>
+                    <Form.Label style={{color:"#E4E4E4"}}>Password</Form.Label>
                     <Form.Control
                       type="password"
                       placeholder="Enter your password"
@@ -69,19 +70,19 @@ export default function LoginPage() {
                   </Form.Group>
 
                   <div className="d-flex justify-content-between align-items-center mb-3">
-                    <Link to="/elogin">
+                    <Link style={{color:"#E4E4E4"}} to="/elogin">
                       Login as Employee
                     </Link>
                   </div>
 
-                  <Button type="submit" className="w-100" variant="primary">
+                  <Button style={{backgroundColor:"#B39CD0"}} type="submit" className="w-100" variant="primary">
                     Sign in
                   </Button>
                    <ToastContainer></ToastContainer>
 
                   <div className="text-center mt-3">
-                    <span className="me-1">Don’t have an account?</span>
-                    <Link to="/signup" className="text-decoration-none">
+                    <span style={{color:"#E4E4E4"}} className="me-1">Don’t have an account?</span>
+                    <Link style={{color:"#E4E4E4"}} to="/signup" className="text-decoration-none">
                       Create account
                     </Link>
                   </div>
